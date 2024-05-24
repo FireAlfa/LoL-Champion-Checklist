@@ -10,12 +10,15 @@ public class ChecklistManager : MonoBehaviour
     public GameObject championItemPrefab;
     public Transform contentPanel;
     private string savePath;
+    public TextMeshProUGUI doneCountText;
+    public int doneCount = 0;
 
     private void Start()
     {
         savePath = Path.Combine(Application.persistentDataPath, "champions.json");
         LoadChampions();
         PopulateChecklist();
+        UpdateDoneCount();
     }
 
     private void PopulateChecklist()
@@ -54,6 +57,7 @@ public class ChecklistManager : MonoBehaviour
         tempColor.a = champion.IsDone ? 230f/255f : 0f;
         button.GetComponent<Image>().color = tempColor;
         SaveChampions();
+        UpdateDoneCount();
     }
 
     private void SaveChampions()
@@ -69,5 +73,36 @@ public class ChecklistManager : MonoBehaviour
             string json = File.ReadAllText(savePath);
             JsonUtility.FromJsonOverwrite(json, championList);
         }
+    }
+
+    public void ResetAllChampions()
+    {
+        foreach (var champ in championList.champions)
+        {
+            champ.IsDone = false;
+        }
+        SaveChampions();
+        RefreshChecklist();
+        UpdateDoneCount();
+    }
+    private void RefreshChecklist()
+    {
+        foreach (Transform child in contentPanel)
+        {
+            Destroy(child.gameObject);
+        }
+        PopulateChecklist();
+    }
+    private void UpdateDoneCount()
+    {
+        doneCount = 0;
+        foreach (var champ in championList.champions)
+        {
+            if (champ.IsDone)
+            {
+                doneCount++;
+            }
+        }
+        doneCountText.text = $"{doneCount}/{championList.champions.Count}";
     }
 }
