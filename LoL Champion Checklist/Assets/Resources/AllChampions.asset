@@ -1,0 +1,349 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a861e9c97b58e49ad02682404416f1, type: 3}
+  m_Name: AllChampions
+  m_EditorClassIdentifier: 
+  champions:
+  - Name: Aatrox
+    IsDone: 0
+  - Name: Ahri
+    IsDone: 0
+  - Name: Akali
+    IsDone: 0
+  - Name: Akshan
+    IsDone: 0
+  - Name: Alistar
+    IsDone: 0
+  - Name: Amumu
+    IsDone: 0
+  - Name: Anivia
+    IsDone: 0
+  - Name: Annie
+    IsDone: 0
+  - Name: Aphelios
+    IsDone: 0
+  - Name: Ashe
+    IsDone: 0
+  - Name: Aurelion Sol
+    IsDone: 0
+  - Name: Azir
+    IsDone: 0
+  - Name: Bard
+    IsDone: 0
+  - Name: Bel'Veth
+    IsDone: 0
+  - Name: Blitzcrank
+    IsDone: 0
+  - Name: Brand
+    IsDone: 0
+  - Name: Braum
+    IsDone: 0
+  - Name: Briar
+    IsDone: 0
+  - Name: Caitlyn
+    IsDone: 0
+  - Name: Camille
+    IsDone: 0
+  - Name: Cassiopeia
+    IsDone: 0
+  - Name: Cho'Gath
+    IsDone: 0
+  - Name: Corki
+    IsDone: 0
+  - Name: Darius
+    IsDone: 0
+  - Name: Diana
+    IsDone: 0
+  - Name: Dr. Mundo
+    IsDone: 0
+  - Name: Draven
+    IsDone: 0
+  - Name: Ekko
+    IsDone: 0
+  - Name: Elise
+    IsDone: 0
+  - Name: Evelynn
+    IsDone: 0
+  - Name: Ezreal
+    IsDone: 0
+  - Name: Fiddlesticks
+    IsDone: 0
+  - Name: Fiora
+    IsDone: 0
+  - Name: Fizz
+    IsDone: 0
+  - Name: Galio
+    IsDone: 0
+  - Name: Gangplank
+    IsDone: 0
+  - Name: Garen
+    IsDone: 0
+  - Name: Gnar
+    IsDone: 0
+  - Name: Gragas
+    IsDone: 0
+  - Name: Graves
+    IsDone: 0
+  - Name: Gwen
+    IsDone: 0
+  - Name: Hecarim
+    IsDone: 0
+  - Name: Heimerdinger
+    IsDone: 0
+  - Name: Hwei
+    IsDone: 0
+  - Name: Illaoi
+    IsDone: 0
+  - Name: Irelia
+    IsDone: 0
+  - Name: Ivern
+    IsDone: 0
+  - Name: Janna
+    IsDone: 0
+  - Name: Jarvan IV
+    IsDone: 0
+  - Name: Jax
+    IsDone: 0
+  - Name: Jayce
+    IsDone: 0
+  - Name: Jhin
+    IsDone: 0
+  - Name: Jinx
+    IsDone: 0
+  - Name: Kai'Sa
+    IsDone: 0
+  - Name: Kalista
+    IsDone: 0
+  - Name: Karma
+    IsDone: 0
+  - Name: Karthus
+    IsDone: 0
+  - Name: Kassadin
+    IsDone: 0
+  - Name: Katarina
+    IsDone: 0
+  - Name: Kayle
+    IsDone: 0
+  - Name: Kayn
+    IsDone: 0
+  - Name: Kennen
+    IsDone: 0
+  - Name: Kha'Zix
+    IsDone: 0
+  - Name: Kindred
+    IsDone: 0
+  - Name: Kled
+    IsDone: 0
+  - Name: Kog'Maw
+    IsDone: 0
+  - Name: K'Sante
+    IsDone: 0
+  - Name: LeBlanc
+    IsDone: 0
+  - Name: Lee Sin
+    IsDone: 0
+  - Name: Leona
+    IsDone: 0
+  - Name: Lillia
+    IsDone: 0
+  - Name: Lissandra
+    IsDone: 0
+  - Name: Lucian
+    IsDone: 0
+  - Name: Lulu
+    IsDone: 0
+  - Name: Lux
+    IsDone: 0
+  - Name: Malphite
+    IsDone: 0
+  - Name: Malzahar
+    IsDone: 0
+  - Name: Maokai
+    IsDone: 0
+  - Name: Master Yi
+    IsDone: 0
+  - Name: Milio
+    IsDone: 0
+  - Name: Miss Fortune
+    IsDone: 0
+  - Name: Mordekaiser
+    IsDone: 0
+  - Name: Morgana
+    IsDone: 0
+  - Name: Naafiri
+    IsDone: 0
+  - Name: Nami
+    IsDone: 0
+  - Name: Nasus
+    IsDone: 0
+  - Name: Nautilus
+    IsDone: 0
+  - Name: Neeko
+    IsDone: 0
+  - Name: Nidalee
+    IsDone: 0
+  - Name: Nilah
+    IsDone: 0
+  - Name: Nocturne
+    IsDone: 0
+  - Name: Nunu
+    IsDone: 0
+  - Name: Olaf
+    IsDone: 0
+  - Name: Orianna
+    IsDone: 0
+  - Name: Ornn
+    IsDone: 0
+  - Name: Pantheon
+    IsDone: 0
+  - Name: Poppy
+    IsDone: 0
+  - Name: Pyke
+    IsDone: 0
+  - Name: Qiyana
+    IsDone: 0
+  - Name: Quinn
+    IsDone: 0
+  - Name: Rakan
+    IsDone: 0
+  - Name: Rammus
+    IsDone: 0
+  - Name: Rek'Sai
+    IsDone: 0
+  - Name: Rell
+    IsDone: 0
+  - Name: Renata Glasc
+    IsDone: 0
+  - Name: Renekton
+    IsDone: 0
+  - Name: Rengar
+    IsDone: 0
+  - Name: Riven
+    IsDone: 0
+  - Name: Rumble
+    IsDone: 0
+  - Name: Ryze
+    IsDone: 0
+  - Name: Samira
+    IsDone: 0
+  - Name: Sejuani
+    IsDone: 0
+  - Name: Senna
+    IsDone: 0
+  - Name: Seraphine
+    IsDone: 0
+  - Name: Sett
+    IsDone: 0
+  - Name: Shaco
+    IsDone: 0
+  - Name: Shen
+    IsDone: 0
+  - Name: Shyvana
+    IsDone: 0
+  - Name: Singed
+    IsDone: 0
+  - Name: Sion
+    IsDone: 0
+  - Name: Sivir
+    IsDone: 0
+  - Name: Skarner
+    IsDone: 0
+  - Name: Smolder
+    IsDone: 0
+  - Name: Sona
+    IsDone: 0
+  - Name: Soraka
+    IsDone: 0
+  - Name: Swain
+    IsDone: 0
+  - Name: Sylas
+    IsDone: 0
+  - Name: Syndra
+    IsDone: 0
+  - Name: Tahm Kench
+    IsDone: 0
+  - Name: Taliyah
+    IsDone: 0
+  - Name: Talon
+    IsDone: 0
+  - Name: Taric
+    IsDone: 0
+  - Name: Teemo
+    IsDone: 0
+  - Name: Thresh
+    IsDone: 0
+  - Name: Tristana
+    IsDone: 0
+  - Name: Trundle
+    IsDone: 0
+  - Name: Tryndamere
+    IsDone: 0
+  - Name: Twisted Fate
+    IsDone: 0
+  - Name: Twitch
+    IsDone: 0
+  - Name: Udyr
+    IsDone: 0
+  - Name: Urgot
+    IsDone: 0
+  - Name: Varus
+    IsDone: 0
+  - Name: Vayne
+    IsDone: 0
+  - Name: Veigar
+    IsDone: 0
+  - Name: Vel'Koz
+    IsDone: 0
+  - Name: Vex
+    IsDone: 0
+  - Name: Vi
+    IsDone: 0
+  - Name: Viego
+    IsDone: 0
+  - Name: Viktor
+    IsDone: 0
+  - Name: Vladimir
+    IsDone: 0
+  - Name: Volibear
+    IsDone: 0
+  - Name: Warwick
+    IsDone: 0
+  - Name: Wukong
+    IsDone: 0
+  - Name: Xayah
+    IsDone: 0
+  - Name: Xerath
+    IsDone: 0
+  - Name: Xin Zhao
+    IsDone: 0
+  - Name: Yasuo
+    IsDone: 0
+  - Name: Yone
+    IsDone: 0
+  - Name: Yorick
+    IsDone: 0
+  - Name: Yuumi
+    IsDone: 0
+  - Name: Zac
+    IsDone: 0
+  - Name: Zed
+    IsDone: 0
+  - Name: Zeri
+    IsDone: 0
+  - Name: Ziggs
+    IsDone: 0
+  - Name: Zilean
+    IsDone: 0
+  - Name: Zoe
+    IsDone: 0
+  - Name: Zyra
+    IsDone: 0
