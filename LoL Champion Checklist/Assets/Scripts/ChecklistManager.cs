@@ -35,7 +35,10 @@ public class ChecklistManager : MonoBehaviour
             }
 
             itemText.text = champ.Name.ToString();
-            itemButton.GetComponentInChildren<TMP_Text>().text = champ.IsDone ? "Done" : "Not Done";
+            itemButton.GetComponentInChildren<TMP_Text>().text = champ.IsDone ? "Done" : "";
+            var tempColor = itemButton.GetComponent<Image>().color;
+            tempColor.a = champ.IsDone ? 230f / 255f : 0f;
+            itemButton.GetComponent<Image>().color = tempColor;
 
             // Capture the current champion in the loop
             Champion currentChamp = champ;
@@ -46,7 +49,10 @@ public class ChecklistManager : MonoBehaviour
     private void ToggleChampionStatus(Champion champion, Button button)
     {
         champion.IsDone = !champion.IsDone;
-        button.GetComponentInChildren<TMP_Text>().text = champion.IsDone ? "Done" : "Not Done";
+        button.GetComponentInChildren<TMP_Text>().text = champion.IsDone ? "Done" : "";
+        var tempColor = button.GetComponent<Image>().color;
+        tempColor.a = champion.IsDone ? 230f/255f : 0f;
+        button.GetComponent<Image>().color = tempColor;
         SaveChampions();
     }
 
