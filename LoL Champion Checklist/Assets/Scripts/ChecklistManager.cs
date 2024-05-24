@@ -9,9 +9,12 @@ public class ChecklistManager : MonoBehaviour
     public ChampionList championList;
     public GameObject championItemPrefab;
     public Transform contentPanel;
-    private string savePath;
     public TextMeshProUGUI doneCountText;
     public int doneCount = 0;
+    public GameObject confirmationPopup;
+    public Button confirmButton;
+    public Button cancelButton;
+    private string savePath;
 
     private void Start()
     {
@@ -19,6 +22,10 @@ public class ChecklistManager : MonoBehaviour
         LoadChampions();
         PopulateChecklist();
         UpdateDoneCount();
+
+        confirmButton.onClick.AddListener(ConfirmReset);
+        cancelButton.onClick.AddListener(CloseConfirmationPopup);
+        confirmationPopup.SetActive(false);
     }
 
     private void PopulateChecklist()
@@ -74,7 +81,20 @@ public class ChecklistManager : MonoBehaviour
             JsonUtility.FromJsonOverwrite(json, championList);
         }
     }
+    public void ConfirmReset()
+    {
+        ResetAllChampions();
+        CloseConfirmationPopup();
+    }
+    private void CloseConfirmationPopup()
+    {
+        confirmationPopup.SetActive(false);
+    }
 
+    public void ShowConfirmationPopup()
+    {
+        confirmationPopup.SetActive(true);
+    }
     public void ResetAllChampions()
     {
         foreach (var champ in championList.champions)
