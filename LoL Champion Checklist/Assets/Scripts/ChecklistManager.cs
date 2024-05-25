@@ -14,6 +14,8 @@ public class ChecklistManager : MonoBehaviour
     public GameObject confirmationPopup;
     public Button confirmButton;
     public Button cancelButton;
+    public TMP_InputField searchBar;
+    public TMP_Dropdown filterDropdown;
     private string savePath;
 
     private void Start()
@@ -28,31 +30,51 @@ public class ChecklistManager : MonoBehaviour
         confirmationPopup.SetActive(false);
     }
 
-    private void PopulateChecklist()
+    private void PopulateChecklist(string filter = "")
     {
+        string currentFilterOption = filterDropdown.options[filterDropdown.value].text;
+
+        foreach (Transform child in contentPanel)
+        {
+            Destroy(child.gameObject);
+        }
+
         foreach (var champ in championList.champions)
         {
-            GameObject newItem = Instantiate(championItemPrefab, contentPanel);
-            var itemImage = newItem.transform.Find("ChampionImage").GetComponent<Image>();
-            var itemText = newItem.transform.Find("ChampionName").GetComponent<TMP_Text>();
-            var itemButton = newItem.transform.Find("Button").GetComponent<Button>();
-
-            // Load the champion image from Resources
-            Sprite champSprite = Resources.Load<Sprite>($"ChampionImages/{champ.Name}");
-            if (champSprite != null)
+            bool shouldDisplay = string.IsNullOrEmpty(filter) || champ.Name.ToLower().Contains(filter.ToLower());
+            if(currentFilterOption == "Done")
             {
-                itemImage.sprite = champSprite;
+                shouldDisplay = shouldDisplay && champ.IsDone;
+            }
+            else if(currentFilterOption == "Not Done")
+            {
+                shouldDisplay = shouldDisplay && !champ.IsDone;
             }
 
-            itemText.text = champ.Name.ToString();
-            itemButton.GetComponentInChildren<TMP_Text>().text = champ.IsDone ? "Done" : "";
-            var tempColor = itemButton.GetComponent<Image>().color;
-            tempColor.a = champ.IsDone ? 230f / 255f : 0f;
-            itemButton.GetComponent<Image>().color = tempColor;
+            if (shouldDisplay)
+            {
+                GameObject newItem = Instantiate(championItemPrefab, contentPanel);
+                var itemImage = newItem.transform.Find("ChampionImage").GetComponent<Image>();
+                var itemText = newItem.transform.Find("ChampionName").GetComponent<TMP_Text>();
+                var itemButton = newItem.transform.Find("Button").GetComponent<Button>();
 
-            // Capture the current champion in the loop
-            Champion currentChamp = champ;
-            itemButton.onClick.AddListener(() => ToggleChampionStatus(currentChamp, itemButton));
+                // Load the champion image from Resources
+                Sprite champSprite = Resources.Load<Sprite>($"ChampionImages/{champ.Name}");
+                if (champSprite != null)
+                {
+                    itemImage.sprite = champSprite;
+                }
+
+                itemText.text = champ.Name.ToString();
+                itemButton.GetComponentInChildren<TMP_Text>().text = champ.IsDone ? "Done" : "";
+                var tempColor = itemButton.GetComponent<Image>().color;
+                tempColor.a = champ.IsDone ? 230f / 255f : 0f;
+                itemButton.GetComponent<Image>().color = tempColor;
+
+                // Capture the current champion in the loop
+                Champion currentChamp = champ;
+                itemButton.onClick.AddListener(() => ToggleChampionStatus(currentChamp, itemButton));
+            }
         }
     }
 
@@ -125,4 +147,13 @@ public class ChecklistManager : MonoBehaviour
         }
         doneCountText.text = $"{doneCount}/{championList.champions.Count}";
     }
+    public void OnSearchValueChanged(string searchValue)
+    {
+        PopulateChecklist(searchValue);
+    }
+    public void OnFilterValueChanged()
+    {
+        PopulateChecklist(searchBar.text);
+    }
+
 }
